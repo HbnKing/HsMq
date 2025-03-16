@@ -8,10 +8,8 @@
     <artifactId>hsmq</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>consumer</module>
-        <module>producer</module>
         <module>io</module>
-        <module>mqserver</module>
+        <module>mq-server</module>
         <module>common</module>
         <module>mq-client</module>
     </modules>
@@ -23,7 +21,6 @@
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>com.heshen</groupId>
                 <artifactId>common</artifactId>

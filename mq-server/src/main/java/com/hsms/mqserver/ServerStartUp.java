@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
  * @author ：河神
  * @date ：Created in 2021/6/4 3:46 下午
  */
-public class ServerStartup {
+public class ServerStartUp {
 
-    final static Logger log = LoggerFactory.getLogger(ServerStartup.class);
+    final static Logger log = LoggerFactory.getLogger(ServerStartUp.class);
 
     public static void main(String[] args) {
         start0(args);

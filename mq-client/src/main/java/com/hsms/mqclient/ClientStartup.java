@@ -42,7 +42,7 @@ public class ClientStartup {
 
         //初始化消费者
         args = new String[]{"TopicB"};
-        ConsumerHandlerManger.initConsumer("BBAConsumer",args,clientReactor.getChannelFuture());
+        //ConsumerHandlerManger.initConsumer("BBAConsumer",args,clientReactor.getChannelFuture());
         ConsumerHandlerManger.initConsumer("BBCConsumer",args,clientReactor.getChannelFuture());
 
         //初始化生产者
@@ -54,7 +54,7 @@ public class ClientStartup {
         sendMessage.setTag("tagB");
         sendMessage.setBody("消息---1");
 
-        for (int i=0;i<2;i++){
+        for (int i=0;i<10000;i++){
             SendMessageResult b = MessageClient.sendMsg(sendMessage);
 
             if (!Integer.valueOf(200).equals(b.getMessageResult())){
@@ -62,18 +62,18 @@ public class ClientStartup {
                 break;
             }
             System.out.println("消息发送 : "+b);
-            Thread.sleep(100L);
+            Thread.sleep(1l);
         }
 
         //发送消息
-//        for (int i=5000;;i++){
-//            SendMessage sendMessage = new SendMessage();
-//            sendMessage.setTopic("TopicB");
-//            sendMessage.setTag("tagB");
-//            sendMessage.setBody("消息---"+i);
-//            MessageClient.sendMsg(sendMessage);
-//            Thread.sleep(100L);
-//        }
+/*       for (int i=500;;i++){
+           SendMessage sendMessage = new SendMessage();
+           sendMessage.setTopic("TopicB");
+           sendMessage.setTag("tagB");
+           sendMessage.setBody("消息---"+i);
+           MessageClient.sendMsg(sendMessage);
+           //Thread.sleep(1L);
+       }*/
 
     }
 
